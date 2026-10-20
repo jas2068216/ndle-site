@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NDLE &mdash; Waitlist</title>
+<link rel="stylesheet" href="_shared.css">
+<style>
+  form.wl { margin: 1.5rem 0 2rem; padding: 1.25rem; background: #FFFFFF; border: 1px solid #E5E3E8; border-radius: 12px; }
+  form.wl label { display: block; font-weight: 600; margin: 0 0 0.35rem; }
+  form.wl input[type=email], form.wl textarea { width: 100%; box-sizing: border-box; font: inherit; line-height: 1.5; padding: 0.7rem 0.8rem; border: 1px solid #BDBAC2; border-radius: 8px; background: #FAFAFA; color: #1A1A1A; margin-bottom: 1rem; }
+  form.wl textarea { min-height: 5.5rem; resize: vertical; }
+  form.wl .check { display: flex; gap: 0.6rem; align-items: flex-start; margin: 0 0 1.1rem; }
+  form.wl .check input { width: 1.4rem; height: 1.4rem; margin-top: 0.2rem; flex: 0 0 auto; }
+  form.wl .check label { font-weight: 400; margin: 0; }
+  form.wl button { font: inherit; font-weight: 600; color: #FAFAFA; background: #0B6E7A; border: 0; border-radius: 999px; padding: 0.75rem 1.5rem; cursor: pointer; }
+  form.wl button:disabled { opacity: 0.6; cursor: default; }
+  form.wl button:focus-visible, form.wl input:focus-visible, form.wl textarea:focus-visible { outline: 3px solid #E2725B; outline-offset: 2px; }
+  .hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+  .wl-msg { margin: 1rem 0 0; min-height: 1.6em; font-weight: 600; }
+</style>
+</head>
+<body>
+<main>
+  <div class="brand"><span class="mark sm"></span><span>NDLE</span></div>
+
+  <h1>Join the NDLE waitlist</h1>
+  <p>NDLE is in private testing while we make it calm and solid. Leave your email and we&rsquo;ll write when there&rsquo;s a spot.</p>
+
+  <form class="wl" id="wl" method="post" action="https://ygzcoivjqpoxxuyibqya.supabase.co/functions/v1/site/waitlist/join" novalidate>
+    <input type="hidden" name="source" value="ndle.org">
+    <div class="hp" aria-hidden="true"><label for="wl-website">Leave this empty</label><input type="text" id="wl-website" name="website" tabindex="-1" autocomplete="off"></div>
+
+    <label for="wl-email">Your email</label>
+    <input type="email" id="wl-email" name="email" required autocomplete="email" inputmode="email">
+
+    <label for="wl-note">What do you want help with? <span class="muted">(optional)</span></label>
+    <textarea id="wl-note" name="note" maxlength="500"></textarea>
+
+    <div class="check"><input type="checkbox" id="wl-adult" name="adult" required><label for="wl-adult">I&rsquo;m 18 or older</label></div>
+
+    <button type="submit">Join the waitlist</button>
+    <p class="wl-msg" role="status" aria-live="polite"></p>
+    <p class="muted">We use your email only to write when there&rsquo;s a spot. No spam, ever. We never sell or share it. See <a href="privacy.html">Privacy</a>.</p>
+  </form>
+
+  <nav class="foot">
+    <p class="muted"><a href="index.html">Home</a> &middot; <a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a></p>
+  </nav>
+</main>
+<script>
+(function () {
+  var f = document.getElementById('wl');
+  if (!f || !window.fetch) return;
+  f.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var msg = f.querySelector('.wl-msg');
+    var btn = f.querySelector('button');
+    var body = {
+      email: f.email.value.trim(),
+      note: f.note.value.trim(),
+      source: 'ndle.org',
+      website: f.website.value,
+      adult: f.adult.checked
+    };
+    if (!body.email) { msg.textContent = 'Add your email so we can write to you.'; return; }
+    if (!body.adult) { msg.textContent = 'Please check the 18 or older box.'; return; }
+    msg.textContent = 'One moment...';
+    btn.disabled = true;
+    fetch(f.action, { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(body) })
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        msg.textContent = d.message || 'Something did not go through. Please try again.';
+        if (!d.ok) btn.disabled = false;
+      })
+      .catch(function () { msg.textContent = 'Something did not go through. Please try again in a bit.'; btn.disabled = false; });
+  });
+})();
+</script>
+</body>
+</html>
