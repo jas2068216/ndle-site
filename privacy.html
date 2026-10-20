@@ -9,26 +9,141 @@
 <body>
 <main>
   <div class="brand"><span class="mark sm"></span><span>NDLE</span></div>
-  <h1>Privacy Policy</h1>
-  <p class="muted">Effective 21 September 2026</p>
-
-  <h2>What NDLE stores</h2>
-  <p>The things you capture (title, time, steps, done/not done), your work and quiet hours, and &mdash; if you allow it &mdash; daily step and sleep totals from Health Connect or HealthKit, used only to estimate your energy for the day.</p>
-
-  <h2>Google data</h2>
-  <p>With your permission NDLE reads your Google Calendar events for the next two weeks and writes the quests you give a time. With the Google Tasks permission it reads and writes one task list named "NDLE &middot; Side Quests." NDLE never reads Gmail, Drive, contacts, or any other Google data.</p>
+  <h1>NDLE Privacy Policy</h1>
+  <p class="muted">Last updated October 20, 2026</p>
+  <p class="muted">Contact: jason@ndle.org</p>
+  
+  <h2>The short version</h2>
+  <ul>
+  <li>NDLE is an AI helper. It plans your day, reads and sums up your mail if you let it, and helps you write replies.</li>
+  <li>Your data is used to run NDLE for you. That is all.</li>
+  <li><strong>Your info is never sold and never used to sell you anything.</strong></li>
+  <li>NDLE never sends email for you. You always press send yourself.</li>
+  <li>Every data source has its own switch. You can turn any one off at any time.</li>
+  <li>You can delete your account and everything in it, from inside the app.</li>
+  <li>NDLE is for adults 18 and over.</li>
+  </ul>
+  
+  <h2>1. What NDLE collects, and why</h2>
+  <ul>
+  <li><strong>Your name, email and Google account ID</strong>, from Google sign-in, to sign you in.</li>
+  <li><strong>What you say or type</strong> (tasks, ideas, notes, chat), to plan your day and answer you. Kept on your phone and in our database.</li>
+  <li><strong>Your voice.</strong> Your phone's own speech tools (Apple or Google) turn it into text. NDLE does not receive or keep the sound.</li>
+  <li><strong>Gmail</strong>, only if you switch it on. See section 3 for exactly what NDLE can and cannot do with it.</li>
+  <li><strong>Calendar events</strong>, if you allow it, to show, book, move and remind you of events.</li>
+  <li><strong>Google Tasks</strong>, if you allow it, to keep one list named "NDLE - Side Quests".</li>
+  <li><strong>Contacts</strong>, if you allow it, to know who people are when you mention them, and to add details you ask for, after you say yes.</li>
+  <li><strong>One Google Doc</strong> ("NDLE Ideas") that NDLE creates in your Drive. NDLE can only see files it made.</li>
+  <li><strong>Sleep and step totals</strong> from Health Connect or HealthKit, if you allow it, to size your day to your energy. The raw totals stay on your phone.</li>
+  <li><strong>Location</strong>, only while the app is open and only if you allow it, to work out when you need to leave. It is sent to Google Maps to get drive time.</li>
+  <li><strong>A photo</strong> only if you pick one or paste a screenshot, to read a schedule from it. It is sent to Anthropic for that one answer.</li>
+  <li><strong>App use counts</strong> (AI cost, errors) and your <strong>push notification token</strong>, to keep NDLE working and to send reminders.</li>
+  <li><strong>Drop notes</strong> and <strong>feedback notes</strong>, if they apply to you. See section 4.</li>
+  </ul>
+  
+  <h2>2. AI processing: who sees what</h2>
+  <p>NDLE uses other companies for some jobs. We send only what the job needs.</p>
+  <ul>
+  <li><strong>Anthropic</strong> (Claude AI) receives your words, your task list, upcoming events, names and notes of people you mention and, if Gmail is on, the text of the mail it is asked to sum up or answer. It uses this to plan, answer, sum up mail and write reply drafts. Anthropic's commercial terms say it may not train models on this content. Anthropic deletes API inputs and outputs within 30 days, and may keep them longer if a safety system flags them or the law requires it.</li>
+  <li><strong>Voice.</strong> Your phone's own voice is the default. If you switch on Premium voice, the words NDLE is about to say go to Speechify, or to ElevenLabs for one custom voice, so they can make the audio. That can include words from a summary of your mail if NDLE says it in the premium voice (the "read my mail" feature uses your phone's voice). Those companies handle that text under their own terms and privacy policies, which we do not control. Switch Premium voice off and NDLE uses only the voice on your phone.</li>
+  <li><strong>Google Maps</strong> receives a start point and an address, for drive time and place details.</li>
+  <li><strong>Supabase</strong> hosts our database, in the United States.</li>
+  <li><strong>Expo</strong> delivers app updates and push reminders.</li>
+  </ul>
+  <p>The words NDLE says to the voice providers travel in the body of a secure request, not in a web address.</p>
+  <p>NDLE is an AI. When you talk with NDLE, you are talking with a computer program, not a person.</p>
+  
+  <h2>3. Google user data</h2>
   <p>NDLE's use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
+  <p>The use of information received from Google Workspace scopes adheres to the <a href="https://developers.google.com/workspace/workspace-api-user-data-developer-policy">Google Workspace API User Data and Developer Policy</a>, including the Limited Use requirements.</p>
+  <p>In plain words:</p>
+  <ul>
+  <li>We use Google data only for features you can see in NDLE: your calendar, your tasks, your contacts, your ideas doc, and, if you turn it on, mail summaries, reply drafts and the inbox tidy-up.</li>
+  <li>We do not sell it, and we do not give it to ad companies, data brokers or resellers.</li>
+  <li>We do not use it for ads, and we do not use it to decide credit or loans.</li>
+  <li>We do not use it to train AI models.</li>
+  <li>People at NDLE do not read it, unless you ask us to (for example for help with a problem), it is needed for security (like stopping abuse), or the law requires it.</li>
+  <li>We share it only with the companies listed in section 2, only to run the feature you asked for.</li>
+  </ul>
+  
+  <h3>The Google permissions NDLE asks for</h3>
+  <ul>
+  <li><strong>Gmail (gmail.modify):</strong> read your mail, add labels, move mail out of your inbox, and move mail to Trash.</li>
+  <li><strong>Google Calendar:</strong> read and write your events.</li>
+  <li><strong>Google Tasks:</strong> read and write your tasks.</li>
+  <li><strong>Google Contacts:</strong> read your contacts, and add or change details after you say yes.</li>
+  <li><strong>Google Drive (drive.file):</strong> only files NDLE itself created, like "NDLE Ideas".</li>
+  </ul>
+  
+  <h3>What NDLE does with Gmail</h3>
+  <p>Gmail is off until you switch it on. When it is on, NDLE can:</p>
+  <ul>
+  <li>Read your mail and sum it up.</li>
+  <li>Read short summaries out loud to you, in your phone's own voice.</li>
+  <li>Write a reply draft for you to read and edit. You send it yourself from your own mail app.</li>
+  <li>Suggest a tidy-up list: junk to Trash, newsletters out of your inbox, labels. Nothing happens until you say yes to that list.</li>
+  <li>Unsubscribe you from a sender, only when you say yes to that sender. NDLE uses the sender's own one-click unsubscribe link. It sends that request straight to the sender, without your Google sign-in attached.</li>
+  </ul>
+  <p>NDLE cannot and does not:</p>
+  <ul>
+  <li><strong>Send email.</strong> There is no send feature anywhere in NDLE.</li>
+  <li><strong>Delete mail for good.</strong> It only moves mail to Trash. Gmail empties Trash after 30 days, so you can get mail back until then.</li>
+  <li>Change your Gmail settings or forwarding.</li>
+  <li>Click links in your email, other than a sender's own one-click unsubscribe link, only when you say yes.</li>
+  </ul>
+  <p>Email content is not kept on our servers. It is sent to Anthropic to get the answer. What stays on your phone is the sender, the subject and the short summary NDLE made.</p>
+  <p>Emails can contain tricks that try to give orders to an AI. NDLE treats every email as untrusted text. The AI that reads your mail has no tools to act with, and nothing happens until you tap yes.</p>
+  
+  <h2>4. Drop notes, feedback and the waitlist</h2>
+  <h3>Drop log</h3>
+  <p>When you do a brain drop, NDLE can keep the words of it, plus a short list of what NDLE filed or booked from it. This is text only. No sound is ever stored or sent. It helps us check that NDLE caught what you said. We keep it for 30 days, then it is deleted automatically. This is controlled by the "Drop notes" switch. For the NDLE owner it is on unless he turns it off. For testers it is off until you say "keep my drop notes". You can say "don't keep my drop notes" any time.</p>
+  <h3>Feedback notes</h3>
+  <p>If you tell NDLE something broke, felt clunky, or you loved it, we keep that note: the words you chose to send, which screen you were on, your app version and phone type, and a small summary of timings and counts from your last few Talk sessions. No audio, and no words from other conversations. Only you and the NDLE owner can read your notes. They are deleted when you delete your account.</p>
+  <h3>The waitlist</h3>
+  <p>If you join the waitlist we keep your email, the optional note about what you want help with, the date, and which page you used. We use it only to write to you when there is a spot. We never sell or share it, and we do not send anything else. We keep a one-way scrambled code of your network address for an hour at a time, only to stop automated sign-ups. Email jason@ndle.org and we will remove you.</p>
+  
+  <h2>5. How long we keep data</h2>
+  <ul>
+  <li>Your account data (tasks, ideas, notes): until you delete it or delete your account.</li>
+  <li>Email content: not stored on our servers.</li>
+  <li>Drop notes: 30 days.</li>
+  <li>Feedback notes: until you delete your account.</li>
+  <li>Health totals: on your phone only. Cleared when you delete the app.</li>
+  <li>Your Google refresh token: kept on our server so NDLE can keep your calendar current, and stored encrypted. It is deleted when you delete your account or disconnect Google.</li>
+  <li>At Anthropic: up to 30 days, longer only if flagged for safety or required by law.</li>
+  </ul>
+  
+  <h2>6. Your choices</h2>
+  <ul>
+  <li><strong>Turn a source off.</strong> NDLE shows one switch for each source: Calendar, Email, Contacts, Drive, Premium voice, Drop notes and Learning. Off means NDLE stops reading it. You can change them any time in Settings.</li>
+  <li><strong>Cut Google off</strong> at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>, or by disconnecting in Settings.</li>
+  <li><strong>Delete everything.</strong> In NDLE, Settings, Delete my account. That revokes NDLE's Google access and erases all your rows, files and sign-in from our servers. You can also email jason@ndle.org and we will delete within 30 days.</li>
+  <li><strong>See your data, or fix it:</strong> email jason@ndle.org.</li>
+  </ul>
+  <p>California residents can ask to know, get a copy of, fix or delete their personal information, and to limit use of sensitive data. We do not sell or "share" personal information for cross-context ads, and we will not treat you worse for asking. Sleep and step totals are health data: NDLE asks before it collects them and today shares them with no one. To make a request, email jason@ndle.org with the subject "Privacy request". We answer within 45 days.</p>
+  
+  <h2>7. Security</h2>
+  <ul>
+  <li>All data moves over encrypted connections (HTTPS).</li>
+  <li>Your database rows are locked to your account.</li>
+  <li>Your Google token on our server is encrypted.</li>
+  <li>Your sign-in keys on your phone are kept in its secure storage (Keychain or Keystore), not in the app's database.</li>
+  <li>If we learn of a breach that affects you, we will tell you, and Google where its policies require it.</li>
+  </ul>
+  
+  <h2>8. Adults only</h2>
+  <p>NDLE is for people 18 and over. We do not knowingly collect data from anyone under 18. If you think a child is using NDLE, email jason@ndle.org and we will delete the account.</p>
+  
+  <h2>9. Not medical help</h2>
+  <p>NDLE is not a doctor or therapist. In a crisis in the US, call or text <strong>988</strong>. See <a href="crisis.html">how NDLE handles a crisis</a>.</p>
+  
+  <h2>10. Changes</h2>
+  <p>If we change how we use your data, we will tell you in the app and ask again before using it in the new way.</p>
+  
+  <h2>11. Contact</h2>
+  <p>Questions or requests: jason@ndle.org</p>
 
-  <h2>Where it lives</h2>
-  <p>On your device first (offline-first database), synced to a private Supabase project in the United States that only your signed-in account can read. Short text snippets (a captured sentence, a quest title) are sent to Anthropic's API to break a task into steps or to answer you in chat, and to Speechify's API to read a line aloud. None of these providers are permitted to use your data to train models.</p>
-
-  <h2>What NDLE never does</h2>
-  <p>No ads. No selling or sharing of data. No tracking across apps. No counting of streaks or missed days.</p>
-
-  <h2>Your control</h2>
-  <p>"Start fresh" in Settings deletes every capture. Disconnecting Google in Settings, or at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>, removes NDLE's access. Email <a href="mailto:jason@ndle.org">jason@ndle.org</a> to have your account and all server data deleted.</p>
-
-  <nav class="foot"><p class="muted"><a href="index.html">Home</a> &middot; <a href="terms.html">Terms</a></p></nav>
+  <nav class="foot"><p class="muted"><a href="index.html">Home</a> &middot; <a href="terms.html">Terms</a> &middot; <a href="crisis.html">Crisis help</a></p></nav>
 </main>
 </body>
 </html>
