@@ -18,7 +18,7 @@
   <li>NDLE is an AI helper. It plans your day, reads and sums up your mail if you let it, and helps you write replies.</li>
   <li>Your data is used to run NDLE for you. That is all.</li>
   <li><strong>Your info is never sold and never used to sell you anything.</strong></li>
-  <li>NDLE never sends email for you. You always press send yourself.</li>
+  <li>NDLE never sends email for you. You always press send yourself. When it tidies your inbox it tells you what it moved, and "undo" puts it back.</li>
   <li>Every data source has its own switch. You can turn any one off at any time.</li>
   <li>You can delete your account and everything in it, from inside the app.</li>
   <li>NDLE is for adults 18 and over.</li>
@@ -68,8 +68,8 @@
   
   <h3>The Google permissions NDLE asks for</h3>
   <ul>
-  <li><strong>Gmail (gmail.modify):</strong> read your mail, add labels, move mail out of your inbox, and move mail to Trash.</li>
-  <li><strong>Google Calendar:</strong> read and write your events.</li>
+  <li><strong>Gmail (gmail.modify):</strong> read your mail, add or remove labels, move mail out of your inbox (archive), and move mail to Trash.</li>
+  <li><strong>Google Calendar:</strong> read your events (from yesterday to two weeks out) and create, move and update the events NDLE makes for you. When you let a quest go, NDLE does not delete its event: it renames it "(let go) ..." with alerts off, as a record. NDLE removes only its own "(let go)" events after a window you choose in Settings (7, 30 or 90 days, or never; 30 is the default). A regular check reads Google back and takes edits you made in Google Calendar into NDLE, so both match.</li>
   <li><strong>Google Tasks:</strong> read and write your tasks.</li>
   <li><strong>Google Contacts:</strong> read your contacts, and add or change details after you say yes.</li>
   <li><strong>Google Drive (drive.file):</strong> only files NDLE itself created, like "NDLE Ideas".</li>
@@ -81,18 +81,22 @@
   <li>Read your mail and sum it up.</li>
   <li>Read short summaries out loud to you, in your phone's own voice.</li>
   <li>Write a reply draft for you to read and edit. You send it yourself from your own mail app.</li>
-  <li>Suggest a tidy-up list: junk to Trash, newsletters out of your inbox, labels. Nothing happens until you say yes to that list.</li>
-  <li>Unsubscribe you from a sender, only when you say yes to that sender. NDLE uses the sender's own one-click unsubscribe link. It sends that request straight to the sender, without your Google sign-in attached.</li>
+  <li>Turn an appointment, bill or delivery email into a reminder on your list.</li>
+  <li>Tidy your inbox when you ask it to check your email: mail that looks like spam goes to Trash, receipts and newsletters are moved out of your inbox (archived, still in All Mail). By default NDLE does this first and then tells you exactly what it did. Say "undo" within 24 hours and it all goes back. Choose "Ask me first" in Settings (or say "ask me before you move mail") and every move becomes a yes-or-no question instead.</li>
+  <li>Show you a clean-up list (promotions to Trash, newsletters to archive) that does nothing until you tap "Yes, do it", with an Undo right after.</li>
+  <li>Unsubscribe you from a sender, only when you name that sender. NDLE uses the sender's own one-click unsubscribe link. It sends that request straight to the sender, without your Google sign-in attached.</li>
+  <li>Anything that changes your plans, like an email that cancels or moves an appointment, is always asked first. Mail NDLE is not sure about is left alone and mentioned to you.</li>
   </ul>
   <p>NDLE cannot and does not:</p>
   <ul>
   <li><strong>Send email.</strong> There is no send feature anywhere in NDLE.</li>
   <li><strong>Delete mail for good.</strong> It only moves mail to Trash. Gmail empties Trash after 30 days, so you can get mail back until then.</li>
   <li>Change your Gmail settings or forwarding.</li>
-  <li>Click links in your email, other than a sender's own one-click unsubscribe link, only when you say yes.</li>
+  <li>Click links in your email, other than a sender's own one-click unsubscribe link, only when you ask.</li>
+  <li>Create a Gmail draft, or act on a message it was not sure about.</li>
   </ul>
-  <p>Email content is not kept on our servers. It is sent to Anthropic to get the answer. What stays on your phone is the sender, the subject and the short summary NDLE made.</p>
-  <p>Emails can contain tricks that try to give orders to an AI. NDLE treats every email as untrusted text. The AI that reads your mail has no tools to act with, and nothing happens until you tap yes.</p>
+  <p>Email content is not kept on our servers. The sender, subject and a capped excerpt are sent to Anthropic to get the summary and the reply draft. The sorting that decides what is spam, a receipt or an appointment runs on your phone, without any AI. What stays on your phone is the sender, the subject, the short summary NDLE made and, for 24 hours, a note of what NDLE moved so that "undo" works.</p>
+  <p>Emails can contain tricks that try to give orders to an AI. NDLE treats every email as untrusted text. The AI that reads your mail has no tools to act with; the inbox tidy-up is a fixed list of safe, reversible moves chosen by rules on your phone, never by anything an email says.</p>
   
   <h2>4. Drop notes, feedback and the waitlist</h2>
   <h3>Drop log</h3>
@@ -116,6 +120,8 @@
   <h2>6. Your choices</h2>
   <ul>
   <li><strong>Turn a source off.</strong> NDLE shows one switch for each source: Calendar, Email, Contacts, Drive, Premium voice, Drop notes and Learning. Off means NDLE stops reading it. You can change them any time in Settings.</li>
+  <li><strong>Choose how mail is tidied.</strong> Settings, Mail: "Tidy and tell me" (the default) or "Ask me first". Either way, "undo" works for 24 hours.</li>
+  <li><strong>Choose when let-go calendar records are cleared</strong> (7, 30 or 90 days, or never) in Settings.</li>
   <li><strong>Cut Google off</strong> at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>, or by disconnecting in Settings.</li>
   <li><strong>Delete everything.</strong> In NDLE, Settings, Delete my account. That revokes NDLE's Google access and erases all your rows, files and sign-in from our servers. You can also email jason@ndle.org and we will delete within 30 days.</li>
   <li><strong>See your data, or fix it:</strong> email jason@ndle.org.</li>
